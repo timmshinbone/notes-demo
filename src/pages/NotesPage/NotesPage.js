@@ -10,7 +10,7 @@ export default function NotesPage({ user }) {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch('/api/notes', {
+        fetch('https://coolpeas-notes-api.onrender.com/api/notes', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -37,7 +37,7 @@ export default function NotesPage({ user }) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        fetch('/api/notes', {
+        fetch('https://coolpeas-notes-api.onrender.com/api/notes', {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${token}`,

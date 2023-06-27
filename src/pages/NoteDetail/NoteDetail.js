@@ -10,7 +10,7 @@ export default function NoteDetail() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`/api/notes/${noteId}`)
+        fetch(`https://coolpeas-notes-api.onrender.com/api/notes/${noteId}`)
 			.then((res) => res.json())
 			.then((note) => setNote(note))
 			.catch((error) => setError(error.message))
@@ -27,7 +27,7 @@ export default function NoteDetail() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        fetch(`/api/notes/${note._id}`, {
+        fetch(`https://coolpeas-notes-api.onrender.com/api/notes/${note._id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
